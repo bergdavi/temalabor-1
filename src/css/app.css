@@ -1,0 +1,17 @@
+.container{
+    padding-top: 1%;
+}
+
+.navbar {
+    background-color: #4c0c60;
+ }
+
+.title{
+    border-bottom: 1px solid grey;
+    padding-bottom: 3px;
+}
+
+.input-field{
+    color: grey;
+    margin-right: 5px;
+}

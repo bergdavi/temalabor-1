@@ -1,0 +1,12 @@
+.navbar-brand, .navbar-brand:hover {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+
+.navbar-nav > li > a:hover {
+    color: gray;
+}

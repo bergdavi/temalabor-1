@@ -1,5 +1,6 @@
 .container{
     padding-top: 1%;
+    background-color: rgba(255,99,71,0);
 }
 
 .navbar {
@@ -14,4 +15,16 @@
 .input-field{
     color: grey;
     margin-right: 5px;
+}
+
+:root{
+    background-image: url("../components/pics/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: rgba(255,99,71,0);
+}
+
+body{
+    background-color: rgba(255,99,71,0);
 }

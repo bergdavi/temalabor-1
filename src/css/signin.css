@@ -21,10 +21,10 @@ label{
 }
 
 .btn-own {
-    background: #fff;
-    color: red;
-    border: 2px solid red;
+    background: #b7b7b7;
+    color: #fff;
+    border: 2px solid grey;
     border-radius: 3px;
-    padding: 5px 10px;
+    margin-bottom: 0px;
     text-transform: uppercase;
 }

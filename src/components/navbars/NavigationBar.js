@@ -34,8 +34,10 @@ export default class NavigationBar extends React.Component {
             <NavbarBrand href="/">BKK e-Jegy</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} onClick={this.closeNavbar} navbar>
+                <div className="navbar-wrapper">
                 <SignedInLinks />
                 <SignedOutLinks />
+                </div>
             </Collapse>
         </Navbar>
 

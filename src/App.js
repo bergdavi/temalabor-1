@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Tickets from './Tickets';
 import FAQ from './FAQ';
 import Contact from './Contact';
+import Registration from './components/auth/Registration'
 import Siker from './tmp/Siker';
 
 
@@ -28,6 +29,7 @@ class App extends Component {
                         <Route path='/faq' exact component={FAQ}/>
                         <Route path='/contact' exact component={Contact}/>
                         <Route path='/siker' exact component={Siker}/>
+                        <Route path='/registration' exact component={Registration}/>
                         <Route component={NoMatchPage} />
                     </Switch>
                 

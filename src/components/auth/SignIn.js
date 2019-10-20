@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import {Button, Modal, ModalHeader, ModalBody, NavLink} from 'reactstrap';
 import '../../css/signin.css'
+import {NavLink as RRNavLink} from "react-router-dom";
 
 class SignIn extends Component {
     constructor(props) {
@@ -70,6 +71,7 @@ class SignIn extends Component {
                             <div className="input-field">
                                 <Button className="btn-own">Belépés</Button>
                             </div>
+                            <NavLink  tag={RRNavLink} exact to='/registration' onClick={this.toggle}>Még nincs fiókja? Regisztráljon itt!</NavLink>
                         </form>
                     </ModalBody>
                 </Modal>

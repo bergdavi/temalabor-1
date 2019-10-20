@@ -2,11 +2,17 @@
     color: black;
     font-weight: bold;
 }
-.navbar {
+.navbar  {
     background-color: #b7b7b7;
 }
 .nav-link {
     color: black;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .navbar-nav > li > a:hover {
@@ -23,4 +29,9 @@
 
 .nav-item{
     margin-right: 10px;
+}
+
+.navbar-wrapper{
+    display: inherit;
+    margin-left: auto !important;
 }

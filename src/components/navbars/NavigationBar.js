@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse } from 'reactstrap';
+import { Collapse, Navbar, NavbarBrand, NavbarToggler } from 'reactstrap';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import '../../css/navigationbar.css'
@@ -13,6 +13,7 @@ export default class NavigationBar extends React.Component {
         };
 
         this.toggle = this.toggle.bind(this);
+        this.closeNavbar = this.closeNavbar.bind(this);
     }
 
     toggle() {
@@ -21,17 +22,23 @@ export default class NavigationBar extends React.Component {
         });
     }
 
+    closeNavbar() {
+        if (this.state.isOpen === true) {
+            this.toggle();
+        }
+    }
+
     render() {
     return (
-        
-        <Navbar color="light" expand="md">
+        <Navbar color="light" light expand="md" >
             <NavbarBrand href="/">BKK e-Jegy</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
+            <Collapse isOpen={this.state.isOpen} onClick={this.closeNavbar} navbar>
                 <SignedInLinks />
                 <SignedOutLinks />
             </Collapse>
         </Navbar>
+
     );
   }
 }

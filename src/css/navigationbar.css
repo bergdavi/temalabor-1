@@ -2,7 +2,9 @@
     color: black;
     font-weight: bold;
 }
-
+.navbar {
+    background-color: #b7b7b7;
+}
 .nav-link {
     color: black;
 }
@@ -13,10 +15,12 @@
 }
 
 .selected {
-    display: flex;
+    display: compact;
     color: white;
-    background-color: slategray;
-    border: 0px solid black;
+    background-color: #459db3;
     border-radius: 10px;
 }
 
+.nav-item{
+    margin-right: 10px;
+}

@@ -1,0 +1,30 @@
+input{
+    background-color: #b7b7b7;
+    color: #fff;
+    padding: 10px 18px 10px 18px;
+    border-color: #6d6d6d;
+    border-radius: 0.4285rem;
+    font-size: 0.75rem;
+    display: block;
+    overflow: visible;
+}
+
+label{
+    color: black;
+    margin-bottom: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.input-field{
+    margin-bottom: 20px;
+}
+
+.btn-own {
+    background: #fff;
+    color: red;
+    border: 2px solid red;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}

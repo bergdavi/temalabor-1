@@ -1,0 +1,13 @@
+.footer{
+    flex-shrink: 0;
+    background: #444444;
+    height: 5rem;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.footerContent{
+    text-align: center;
+    color: white;
+}

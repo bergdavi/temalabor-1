@@ -4,9 +4,9 @@ import { NavLink as RRNavLink } from 'react-router-dom';
 import '../../css/navigationbar.css'
 
 const SignedInLinks = () => {
-    if(!localStorage.getItem('id')){
+    /*if(!localStorage.getItem('id')){
         return null;
-    }else
+    }else*/
         return (
         <Nav className="ml-auto navbar-collapse" navbar>
             <NavItem><NavLink activeClassName="selected" tag={RRNavLink} exact to='/users'>Felhasználók</NavLink></NavItem>

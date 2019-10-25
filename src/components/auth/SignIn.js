@@ -1,9 +1,88 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, NavLink} from 'reactstrap';
 import '../../css/signin.css'
-import {NavLink as RRNavLink} from "react-router-dom";
+import {NavLink as RRNavLink, Redirect} from "react-router-dom";
+import { useAuth } from "../../context/auth";
 
-class SignIn extends Component {
+function SignIn() {
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const {setAuthTokens} = useAuth();
+
+    let state = {
+        modal: false,
+        setModal: false,
+        email: "",
+        password: ""
+    };
+
+    toggle = toggle.bind(this);
+
+    handleChange = handleChange.bind(this);
+    handleSubmit = handleSubmit.bind(this);
+
+
+function toggle() {
+    this.setState({
+        modal: ! this.state.modal
+    });
+}
+
+
+function handleChange(event) {
+    const {name, value} = event.target;
+    this.setState({[name]: value});
+}
+
+
+    function handleSubmit() {
+        window.axios.post('/api/auth/login',  {email: this.state.email, password: this.state.password},
+            {withCredentials: true})
+            .then(result => {
+            if (result.status === 200) {
+                setAuthTokens(result.data);
+                setLoggedIn(true);
+            } else {
+                setIsError(true);
+            }
+        }).catch(e => {
+            setIsError(true);
+        });
+    }
+
+    if (isLoggedIn) {
+        return <Redirect to="/"/>;
+    }
+
+
+    return (
+        <div>
+            <Button color="primary" onClick={toggle}>Bejelentkezés</Button>
+            <Modal isOpen={state.modal} toggle={toggle} className="asd">
+                <ModalHeader toggle={toggle}>Bejelentkezés</ModalHeader>
+                <ModalBody>
+                    <form onSubmit={handleSubmit} className="white">
+                        <div className="input-field">
+                            <label htmlFor="email">Email</label>
+                            <input type="text" id="email" name="email" value={state.email} onChange={handleChange}/>
+                        </div>
+                        <div className="input-field">
+                            <label htmlFor="password">Jelszó</label>
+                            <input type="password" id="password" name="password" value={state.password}
+                                   onChange={handleChange}/>
+                        </div>
+                        <div className="input-field">
+                            <Button className="btn-own">Belépés</Button>
+                        </div>
+                        <NavLink  tag={RRNavLink} exact to='/registration' onClick={toggle}>Még nincs fiókja? Regisztráljon itt!</NavLink>
+                    </form>
+                </ModalBody>
+            </Modal>
+        </div>
+    );
+}
+
+/*class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -78,6 +157,6 @@ class SignIn extends Component {
             </div>
         );
     }
-}
+}*/
 
 export default SignIn;

@@ -10,7 +10,6 @@ const SignedOutLinks = () => {
                 <NavItem><NavLink activeClassName="selected" tag={RRNavLink} exact to='/faq'>GYIK</NavLink></NavItem>
                 <NavItem><NavLink activeClassName="selected" tag={RRNavLink} exact
                                   to='/contact'>Kapcsolat</NavLink></NavItem>
-                <Login/>
             </Nav>
     )
 }

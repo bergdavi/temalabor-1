@@ -1,12 +1,9 @@
 import React from 'react';
-import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
-import SignedInLinks from './SignedInLinks';
+import {Collapse, Navbar, NavbarBrand, NavbarToggler} from 'reactstrap';
 import SignedOutLinks from './SignedOutLinks';
 import '../../css/navigationbar.css'
 import { authenticationService } from '../../_services/authentication.service';
 import { Role } from '../../_helpers/role'
-import {NavLink as RRNavLink} from "react-router-dom";
-import Login from "../auth/SignIn";
 
 export default class NavigationBar extends React.Component {
     constructor(props) {
@@ -53,9 +50,6 @@ export default class NavigationBar extends React.Component {
             <Collapse isOpen={this.state.isOpen} onClick={this.closeNavbar} navbar>
                 <div className="navbar-wrapper">
                     <SignedOutLinks />
-
-               {/* <SignedInLinks />*/}
-                    }
                 </div>
             </Collapse>
         </Navbar>

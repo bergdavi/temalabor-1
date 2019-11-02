@@ -1,8 +1,26 @@
 import React, {Component} from 'react'
+import {authenticationService} from "../../_services/authentication.service";
+import {Role} from "../../_helpers/role";
 
 class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            currentUser: null,
+            isAdmin: false,
+        };
+    }
+
+    componentDidMount() {
+        authenticationService.currentUser.subscribe(x => this.setState({
+            currentUser: x,
+            isAdmin: x && x.type === Role.Admin
+        }));
+    }
 
     render() {
+
             return (
                 <div className="dashboard container">
                     <div className="row">

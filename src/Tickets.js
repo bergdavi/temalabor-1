@@ -25,7 +25,7 @@ class Tickets extends Component {
             tickets: [],
             modal: false,
             setModal: false,
-            type: '',
+            name: '',
             validFor: '',
             validTimeUnit: '',
             price: '',
@@ -65,18 +65,18 @@ class Tickets extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        ticketService.addNewTicket(this.state.type, this.state.validFor, this.state.validTimeUnit, this.state.price, this.state.line);
+        ticketService.addNewTicket(this.state.name, this.state.validFor, this.state.validTimeUnit, this.state.price, this.state.line);
     }
 
     render() {
-        const {type, validFor, validTimeUnit, price, line} = this.state;
+        const {name, validFor, validTimeUnit, price, line} = this.state;
         let ticketCards = this.state.tickets.map(ticketIter => {
             return (
                 <Col sm="4">
                     <TicketCard ticket={ticketIter}/>
                 </Col>
             )
-        })
+        });
         return (
             <div className="dashboard container">
                 <div className="row">
@@ -98,7 +98,7 @@ class Tickets extends Component {
                             <tbody>
                             {this.state.tickets && this.state.tickets.length !== 0 ? this.state.tickets.map(ticket =>
                                     <tr key={ticket.typeId}>
-                                        <td>{ticket.type}</td>
+                                        <td>{ticket.name}</td>
                                         <td>{ticket.validFor}{ticket.validTimeUnit}</td>
                                         <td>{ticket.line.name}</td>
                                         <td>{ticket.line.type}</td>
@@ -116,25 +116,25 @@ class Tickets extends Component {
                             <ModalBody>
                                 <Form onSubmit={this.handleSubmit}>
                                     <FormGroup>
-                                        <Label for="type">Típus</Label>
-                                        <input type="text" id="type" name="type" value={type}
+                                        <Label for="name">Név</Label>
+                                        <input type="text" id="name" name="name" value={name}
                                                onChange={this.handleChange}/>
                                     </FormGroup>
                                     <FormGroup>
-                                        <Label for="type">Érvényesség</Label>
+                                        <Label for="validFor">Érvényesség</Label>
                                         <input type="text" id="validFor" name="validFor" value={validFor}
                                                onChange={this.handleChange}/>
-                                        <Label for="type">Érvényesség típus</Label>
+                                        <Label for="validTimeUnit">Érvényesség típus</Label>
                                         <input type="text" id="validTimeUnit" name="validTimeUnit" value={validTimeUnit}
                                                onChange={this.handleChange}/>
                                     </FormGroup>
                                     <FormGroup>
-                                        <Label for="type">Ár</Label>
+                                        <Label for="price">Ár</Label>
                                         <input type="text" id="price" name="price" value={price}
                                                onChange={this.handleChange}/>
                                     </FormGroup>
                                     <FormGroup>
-                                        <Label for="type">Viszonylat</Label>
+                                        <Label for="line">Viszonylat</Label>
                                         <input type="text" id="line" name="line" value={line}
                                                onChange={this.handleChange}/>
                                     </FormGroup>

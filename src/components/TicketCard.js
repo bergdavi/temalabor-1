@@ -7,17 +7,17 @@ class TicketCard extends React.Component {
     }
 
     render() {
-        console.log(this.props.ticket.type);
+        console.log(this.props.ticket.name);
         return (
             <div>
                 <Card body inverse color="info">
-                        <CardTitle>{this.props.ticket.type}</CardTitle>
-                        <CardText>
-                            Érvényesség: {this.props.ticket.validFor} {this.props.ticket.validTimeUnit}
-                        </CardText>
-                        <CardText>
-                            Ár: {this.props.ticket.price}
-                        </CardText>
+                    <CardTitle>{this.props.ticket.name}</CardTitle>
+                    <CardText>
+                        Érvényesség: {this.props.ticket.validFor} {this.props.ticket.validTimeUnit}
+                    </CardText>
+                    <CardText>
+                        Ár: {this.props.ticket.price}
+                    </CardText>
                 </Card>
             </div>
         );
